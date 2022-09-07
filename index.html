@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recording Booth</title>
+
+  <link href="main.css?klasssssx" rel="stylesheet" crossorigin="anonymous">
+  <script src="questions.js?jjsabc" ></script>
+  <script src="webapp.js?aqqsssasq" ></script>
+
+
+</head>
+
+<body onclick="reset_app_timeout()">
+
+  <!-- Navigation bar -->
+  <div id='navbar' class="navbar">
+    <div id="btn-reset" class="nav-btn-left">RESET</div>
+    <div id="btn-lang" class="nav-btn-left-noborder"><img id="icn_flag_lb" src="icn_flag_lb.png" style="height: 25px; width:auto; margin: 0px; padding: 0px"></div>
+    <div id="btn-help" class="nav-btn-left">HELP</div>
+    <!-- <div id="btn-back" class="nav-btn-right">btn-back</div> -->
+    <div id="btn-back" class="nav-btn-right"><img src="icn_backarrow.png" style="height: 30px; width:auto;"><span class="nav-btn-right">BACK</span></div>
+  </div>
+
+
+  <div id="main" class="">
+
+    <div id="title" class="debug">Hello !</div>
+    <div id="instructions" class="debug">Record here what you have to say to Beirut</div>
+
+    <div id="countDownInfo" class="debug"></div>
+    <div id="animation" class="debug"><img src="anim_recording.gif" style="height: 100px; width:auto; margin:0px; padding:0px;"></div>
+
+    <div id="centralButton" class="debug">
+      <img id="icn_microphone" src="icn_microphone.png" style="height: 100px; width:auto;" onclick="startCountDown()">
+      <img id="icn_pause" src="icn_pause.png" style="height: 100px; width:auto;" onclick="stopCountDown()">
+    </div>
+
+    <div id="centralButtonLabel" class="debug">Start Recording...</div>
+
+    <div id="scrollableText" class="debug">scrollableText</div>
+
+    <div id="formContainer" class="debug">
+      <form action="/action_page.php" class="debug">
+        
+        <div id="contactArea">
+          <input type="text" id="frmName" name="name" placeholder="name" class="input">
+          <input type="email" id="frmEmail" name="email" placeholder="email" class="input">
+          <!-- <input id="frmMsg" name="message" placeholder="message" class="input"> -->
+          <textarea id="frmMsg" name="message" rows="5" placeholder="message" class="input"></textarea>
+          
+        </div>
+
+        <div id="checkboxArea" class="debug">
+          <div id="checkboxWrapper" class="debug">
+            <input type="checkbox" id="frmAgree" class="debug" value=unchecked>
+            <label for="checkBox" id="frmAgreeLabel">I have read agreed with the terms and conditions</label>
+          </div>
+        </div>
+
+        <!-- <input type="submit"> -->
+      </form>
+    </div>
+
+    
+      
+
+    <div id="bottomButtonsBarOnAir" class="bottomButtonsBar debug">
+      <div id="btnLeft" class="action-btn action-btn-left" onclick="btn_onair_ko()">
+        DELETE <img src="icn_trash.png" style="height: 1.2em; width:auto; transform: translateY(4px);"></div>
+      <div id="btnRight" class="action-btn action-btn-right action-send" onclick="btn_onair_ok()">
+        SEND <img src="icn_paperplane.png" style="height: 1.2em; width:auto; transform: translateY(4px);"></div>
+    </div>
+    
+    <div id="bottomButtonsBarPublish" class="bottomButtonsBar debug">
+      <div id="btnLeft" class="action-btn action-btn-left" onclick="btn_choice2publish_ko()">CANCEL</div>
+      <div id="btnRight" class="action-btn action-btn-right action-agree" onclick="btn_choice2publish_ok()">AGREE</div>
+    </div>
+
+    <div id="bottomButtonsBarContact" class="bottomButtonsBar debug">
+      <div id="btnLeft" class="action-btn action-btn-left" onclick="btn_contact_ko()">CANCEL</div>
+      <div id="btnRight" class="action-btn action-btn-right action-agree" onclick="btn_contact_ok()">SEND</div>
+    </div>
+
+    <div id="bottomButtonsBarCancelPublish" class="bottomButtonsBar debug">
+      <div id="btnLeft" class="action-btn action-btn-left" onclick="btn_choice2publish_cancel_ko()">DELETE</div>
+      <div id="btnRight" class="action-btn action-btn-right action-agree" onclick="btn_choice2publish_cancel_ok()">KEEP</div>
+    </div>
+
+    <div id="bottomButtonsBarCancelContact" class="bottomButtonsBar debug">
+      <div id="btnLeft" class="action-btn action-btn-left" onclick="btn_contact_cancel_ko()">DELETE IT</div>
+      <div id="btnRight" class="action-btn action-btn-right action-agree" onclick="btn_contact_cancel_ok()">KEEP IT</div>
+    </div>
+
+    <div id="bottomButtonsBarTY1" class="bottomButtonsBar debug">
+      <div id="btnLeft" class="action-btn action-btn-left" onclick="btn_thankyou1_ko()">NO</div>
+      <div id="btnRight" class="action-btn action-btn-right action-agree" onclick="btn_thankyou1_ok()">YES</div>
+    </div>
+    <div id="bottomButtonsBarTY2" class="bottomButtonsBar debug">
+      <div id="btnLeft" class="action-btn action-btn-left" onclick="btn_thankyou2_ko()">CANCEL</div>
+      <div id="btnRight" class="action-btn action-btn-right action-agree" onclick="btn_thankyou2_ok()">AGREE</div>
+    </div>
+
+    <div id="bottomButtonsBarSingle" class="bottomButtonsBar debug">
+      <div id="btnLeft" class="action-btn" onclick="btn_deletionDone_ok()">BYE NOW</div>
+    </div>
+
+
+    <div id="info-panel" class="panel panel-hidden">info-panel</div>
+    <div id="warning-popup" class="warning warning-hidden">Inactive. <br><br>Game will reset soon.</div>
+      
+  </div>
+
+  <script>
+    setTimeout('debug_init()', 100)
+  </script>
+
+
+</body>
+</html>
+
